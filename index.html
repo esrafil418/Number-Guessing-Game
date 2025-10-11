@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <!-- title  -->
+      <section class="game__info">
+        <h1 class="game__title">Number Guessing Game</h1>
+        <p class="game__text">Try and guess a number between 1 and 100</p>
+        <p class="game__text">You have 10 shots</p>
+      </section>
+      <!-- input  -->
+      <section class="game__form">
+        <input
+          type="number"
+          class="game__input"
+          id="guess-input"
+          placeholder="Enter your guess"
+          min="1"
+          max="100"
+        />
+        <!-- error messages  -->
+        <p class="game__error" id="error-message"></p>
+        <p class="game__hint" id="hint-message"></p>
+        <!-- buttons  -->
+        <div class="game__buttons">
+          <button class="game__btn game__btn--submit" id="btn-submit">
+            Submit Guess
+          </button>
+          <!-- // -->
+          <button class="game__btn game__btn--reset" id="btn-reset">
+            Try Again
+          </button>
+        </div>
+      </section>
+
+      <!-- game status  -->
+      <section class="game__status">
+        <div class="game__status-item">
+          <span class="game__label">Previous guesses:</span>
+          <!-- show user previous-guesses  -->
+          <div class="game__previous" id="previous-guesses"></div>
+        </div>
+        <!-- //  -->
+        <div class="game__status-item">
+          <span class="game__label">Remaining guesses:</span>
+          <!-- show user remaining-guesses  -->
+          <span class="game__remaining" id="remaining-guesses"></span>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
