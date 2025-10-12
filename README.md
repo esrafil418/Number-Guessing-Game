@@ -2,7 +2,7 @@
 
 A simple browser-based number guessing game built with vanilla HTML, CSS, and JavaScript.
 
-Players try to guess a random number between 1 and 100. The UI shows previous guesses, remaining attempts, and displays win/lose messages in a fixed, scrollable result area so the main game box doesn't resize when messages are added.
+Players try to guess a random number between 1 and 100. The UI shows previous guesses, remaining attempts, and displays win/lose messages in a fixed, scrollable result area.
 
 ## Features
 
