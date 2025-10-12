@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  font-family: "Gill Sans", "Gill Sans MT";
+  font-family: sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,9 +24,10 @@ body {
   background-color: #f2f8ff;
   padding: 30px 40px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  width: 90%;
-  min-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  /* fixed visual size (capped on small screens) */
+  width: min(560px, 95%);
+  height: 560px;
   text-align: center;
 }
 
@@ -121,10 +122,11 @@ body {
 
 /* ! status  */
 .game__status {
-  width: 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  margin-top: 5px;
 }
 
 .game__status-item {
@@ -145,6 +147,40 @@ body {
   justify-content: flex-end;
 }
 
+/* result area: fixed box that won't resize when messages are added */
+.game__result-area {
+  width: 100%;
+  max-width: 100%;
+  height: 160px; /* fixed height for result box */
+  background: rgba(102, 126, 234, 0.06);
+  border: 1px solid rgba(102, 126, 234, 0.15);
+  border-radius: 12px;
+  padding: 10px;
+  overflow-y: auto;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.game__result {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.game__result--win {
+  background: rgba(39, 174, 96, 0.12);
+  color: #27ae60;
+}
+
+.game__result--lose {
+  background: rgba(192, 57, 43, 0.08);
+  color: #c0392b;
+}
+
 .game__remaining {
   font-weight: bold;
   color: #1a237e;
@@ -155,10 +191,11 @@ body {
   background: #667eea;
   color: #fff;
   font-size: 0.8rem;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  display: flex;
+  border-radius: 999px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }

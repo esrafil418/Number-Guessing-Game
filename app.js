@@ -7,6 +7,7 @@ const remainingGuesses = document.querySelector("#remaining-guesses");
 const errorMsg = document.querySelector("#error-message");
 const hintMsg = document.querySelector("#hint-message");
 const gameContainer = document.querySelector(".game");
+const resultArea = document.querySelector("#result-area");
 
 // ! game state
 let correctNumber;
@@ -110,11 +111,13 @@ function showResult(isWin) {
     ? `🏆 You guessed it! The number was ${correctNumber}.`
     : `💀 You lost! The number was ${correctNumber}.`;
 
-  // add animation
-  msg.style.marginTop = "10px";
-  msg.style.fontWeight = "bold";
-  msg.style.color = isWin ? "#27ae60" : "#c0392b";
-  gameContainer.appendChild(msg);
+  // add animation / class for styling
+  msg.style.marginTop = "0";
+  msg.classList.add(isWin ? "game__result--win" : "game__result--lose");
+  // append to fixed result area so the main box won't resize
+  resultArea.appendChild(msg);
+  // ensure newest message is visible
+  resultArea.scrollTop = resultArea.scrollHeight;
 
   //   todo - add win/lose image later
 }
