@@ -4,6 +4,8 @@ A simple browser-based number guessing game built with vanilla HTML, CSS, and Ja
 
 Players try to guess a random number between 1 and 100. The UI shows previous guesses, remaining attempts, and displays win/lose messages in a fixed, scrollable result area.
 
+[🚀 Live](https://esrafil418.github.io/Number-Guessing-Game/)
+
 ## Features
 
 - Random number between 1 and 100
